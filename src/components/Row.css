@@ -1,0 +1,36 @@
+.row {
+  padding: 8px 0 24px;
+  /* Each row stacks vertically */
+}
+
+.row__title {
+  padding: 0 48px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color var(--transition);
+}
+
+.row:hover .row__title {
+  color: var(--text-primary);
+}
+
+/* Horizontal scroll container */
+.row__scroll {
+  display: flex;
+  gap: 8px;
+  padding: 10px 48px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* Hide scrollbar on Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) var(--bg-primary);
+}
+
+/* Prevent row from shrinking cards */
+.row__scroll > * {
+  flex-shrink: 0;
+}

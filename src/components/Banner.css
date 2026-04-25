@@ -1,0 +1,112 @@
+.banner {
+  position: relative;
+  height: 90vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Gradient overlay: dark on left, transparent in center, dark at bottom */
+.banner__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(20,20,20,0.9) 30%, transparent 70%),
+    linear-gradient(to top, rgba(20,20,20,1) 0%, transparent 30%);
+}
+
+/* Content sits above the overlay */
+.banner__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 0 48px 80px;
+  max-width: 560px;
+}
+
+.banner__label {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.banner__title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+}
+
+.banner__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  /* Clamp to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.banner__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.banner__dot { color: var(--red); }
+.banner__rating { color: #f5c518; }
+
+/* Buttons */
+.banner__buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.banner__btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.banner__btn--play {
+  background: var(--text-primary);
+  color: #000;
+}
+.banner__btn--play:hover {
+  background: rgba(255,255,255,0.8);
+  transform: scale(1.03);
+}
+
+.banner__btn--info {
+  background: rgba(109, 109, 110, 0.6);
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.banner__btn--info:hover {
+  background: rgba(109, 109, 110, 0.9);
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .banner__title { font-size: 2.5rem; }
+  .banner__content { padding: 0 24px 60px; }
+}

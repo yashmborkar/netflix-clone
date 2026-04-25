@@ -1,0 +1,61 @@
+/* ── Global Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #141414;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #1f1f1f;
+  --red: #e50914;
+  --red-hover: #f40612;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #757575;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition: 0.3s ease;
+  --radius: 6px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── App Layout ── */
+.app {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Rows sit below the banner — pulled up slightly to overlap the bottom gradient */
+.rows-container {
+  padding-top: 20px;
+  padding-bottom: 60px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Thin scrollbar for row scrolling */
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 2px;
+}
